@@ -1,4 +1,12 @@
 <%= form_with model: kitten, html: { style: "padding: 15px; border: 1px solid;" } do |form| %>
+  <div class="errors" style="color: red; font-size: 1.5rem;">
+    <% if kitten.errors.any? %>
+      <% kitten.errors.each do |error| %>
+        <p><%= error.full_message %></p>
+      <% end %>
+    <% end %>
+  </div>
+  
   <div class="field" style="padding: 10px;">
     <%= form.label :name, "Name: " %>
     <%= form.text_field :name %>
