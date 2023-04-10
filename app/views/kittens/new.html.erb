@@ -1,0 +1,25 @@
+<h1>Create a new kitten</h1>
+
+<%= form_with model: @kitten, html: { style: "padding: 15px; border: 1px solid;" } do |form| %>
+  <div class="field" style="padding: 10px;">
+    <%= form.label :name, "Name: " %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field" style="padding: 10px;">
+    <%= form.label :age, "Age: " %>
+    <%= form.number_field :age %>
+  </div>
+
+  <div class="field" style="padding: 10px;">
+    <%= form.select :cuteness, ["very cute", "cute"] %>
+  </div>
+
+  <div class="field" style="padding: 10px;">
+    <%= form.select :softness, ["very soft", "soft", "medium", "hard"] %>
+  </div>
+
+  <div class="action">
+    <%= form.submit "Submit" %>
+  </div>
+<% end %>
