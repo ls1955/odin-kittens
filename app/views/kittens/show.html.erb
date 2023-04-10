@@ -1,3 +1,9 @@
+<% if flash.any? %>
+  <% flash.each do |_, message|%>
+    <p><%= message%></p>
+  <% end %>
+<% end %>
+
 <h1><%= @kitten.name %>'s Bio</h1>
 <%= link_to "Homepage", root_path %>
 <%= link_to "Edit this kitten", edit_kitten_path(@kitten) %>

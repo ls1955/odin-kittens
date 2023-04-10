@@ -14,8 +14,9 @@ class KittensController < ApplicationController
     @kitten = Kitten.new kitten_params
 
     if @kitten.save
-      redirect_to @kitten
+      redirect_to @kitten, notice: "Kitten has been successfully created."
     else
+      flash.now[:error] = "Something went wrong."
       render :new, status: :unprocessable_entity
     end
   end
@@ -26,6 +27,7 @@ class KittensController < ApplicationController
     if @kitten.update kitten_params
       redirect_to @kitten, notice: "Information has been successfully updated."
     else
+      flash.now[:error] = "Something went wrong."
       render :edit, status: :unprocessable_entity
     end
   end
