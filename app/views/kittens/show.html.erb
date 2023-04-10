@@ -1,8 +1,11 @@
 <h1><%= @kitten.name %>'s Bio</h1>
+<%= link_to "Homepage", root_path %>
+<%= link_to "Edit this kitten", edit_kitten_path(@kitten) %>
 
 <div class="container" style="border: 1px solid; width: 200px; padding: 20px;">
   <p>Age: <%= @kitten.age %></p>
   <p>Cuteness: <%= @kitten.cuteness %></p>
   <p>Softness: <%= @kitten.softness %></p>
+
   <%= button_to "Delete this kitten", @kitten, method: :delete %>
 </div>
