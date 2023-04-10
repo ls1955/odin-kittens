@@ -10,7 +10,8 @@
   <tbody>
     <% @kittens.each do |kitten| %>
       <tr>
-        <td><%= kitten.name %></td>
+        <td><%= link_to kitten.name, kitten %></td>
+        <td><%= button_to "Remove this kitten", kitten_path(kitten.id), method: :delete%></td>
       </tr>
     <% end %>
   </tbody>

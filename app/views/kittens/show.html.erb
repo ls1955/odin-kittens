@@ -4,4 +4,5 @@
   <p>Age: <%= @kitten.age %></p>
   <p>Cuteness: <%= @kitten.cuteness %></p>
   <p>Softness: <%= @kitten.softness %></p>
+  <%= button_to "Delete this kitten", @kitten, method: :delete %>
 </div>
