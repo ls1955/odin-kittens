@@ -1,0 +1,17 @@
+<h1>Kittens</h1>
+
+<table>
+  <thead>
+    <th>
+      <td>Name</td>
+    </th>
+  </thead>
+
+  <tbody>
+    <% @kittens.each do |kitten| %>
+      <tr>
+        <td><%= kitten.name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
